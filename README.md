@@ -1,6 +1,6 @@
-Disease Prediction System — Week 1: Project Planning & Dataset Scoping
+Disease Prediction System — Week 2: Data Cleaning & Transformation
 
-Week 1 deliverable for the Virtual Data Science Apprentice – Python Specialist Intern program (NSDC YuvaIntern). This week establishes the project plan for a Python-based Disease Prediction System.
+Week 2 deliverable for the Virtual Data Science Apprentice – Python Specialist Intern program (NSDC YuvaIntern). This week documents the data cleaning and transformation strategy for the UCI Heart Disease dataset.
 
 
 
@@ -10,43 +10,50 @@ Week 1 deliverable for the Virtual Data Science Apprentice – Python Specialist
 
 Objective
 
-Design a project proposal covering objectives, scope, candidate public datasets, and a high-level analytical workflow for predicting heart disease risk from clinical data.
+Document a Python-based plan for handling missing values, duplicates, outliers, and feature transformation to produce an analysis-ready dataset.
 
 
 Contents
 
-week1-planning/
-├── Week1_Project_Planning_Dataset_Scoping.docx   # Full project proposal
+week2-data-cleaning/
+├── Week2_Data_Cleaning_Transformation.docx   # Full cleaning & transformation plan
 └── README.md
 
 What's in the Report
 
 
-Project objectives and scope
+Data quality profiling approach (nulls, sentinel placeholder values, duplicates, invalid ranges)
 
-Problem statement (binary classification of heart disease risk)
+Missing value strategy: median/mode imputation, KNNImputer, row removal thresholds
 
-Comparison of candidate public datasets (UCI Heart Disease, Pima Indians Diabetes, Framingham Heart Study)
+Duplicate detection and removal (pandas.drop_duplicates)
 
-Selected dataset and rationale: UCI Heart Disease Dataset (Cleveland subset)
+Outlier detection: IQR method, z-score method, box-plot confirmation
 
-High-level 4-week workflow: acquisition → cleaning → EDA → modelling
+Encoding plan: label encoding (binary fields) and one-hot encoding (nominal fields)
 
-Planned Python tools: pandas, numpy, matplotlib, seaborn, scikit-learn
+Feature scaling: StandardScaler, applied strictly after the train/test split to avoid leakage
 
-Anticipated challenges and mitigation strategies
+Two proposed engineered features (age-group bucket, cholesterol × blood pressure interaction)
 
-Timeline with weekly checkpoints
+An 8-step repeatable cleaning pipeline
+
+Risk table covering leakage prevention and over-aggressive outlier removal
 
 
-Dataset
+Tools
 
-UCI Heart Disease Dataset — 13–14 clinical features (age, sex, chest pain type, resting blood pressure, cholesterol, fasting blood sugar, resting ECG, max heart rate, exercise-induced angina, etc.) with a binary disease-presence target.
+pandas, numpy, scikit-learn (KNNImputer, StandardScaler, OneHotEncoder)
+
+
+Depends On
+
+Week 1 project plan and dataset selection.
 
 
 Next Step
 
-Week 2 will use this plan to clean and transform the selected dataset into an analysis-ready form.
+Week 3 will use the cleaned dataset for exploratory data analysis and visualization.
 
 
 Author
